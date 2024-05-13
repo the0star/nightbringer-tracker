@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import placeholder from "public/card_placeholder.jpg";
 
 function getImageURL(name: string, type: "original" | "bloomed") {
   // const exclusive_cards: string[] = [];
@@ -17,15 +18,13 @@ export default function ImageWithFallback({
   name: string;
   type: "original" | "bloomed";
 }) {
-  const [imgSrc, setImgSrc] = useState(getImageURL(name, type));
+  const [error, setError] = useState(false);
 
   return (
     <Image
-      src={imgSrc}
+      src={error ? placeholder : getImageURL(name, type)}
       alt={name + " " + type}
-      onError={() => {
-        setImgSrc("https://karasu-os.com/images/card_placeholder.jpg");
-      }}
+      onError={() => setError(true)}
       sizes="100vw"
       style={{
         width: "100%",
