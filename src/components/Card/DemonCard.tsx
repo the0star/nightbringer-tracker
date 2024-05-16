@@ -24,7 +24,7 @@ export default function MediaCard({ card }: { card: string }) {
       </CardContent>
       {/* <CardActions>
         <IconButton aria-label="add">
-          <AddIcon />
+          <AddIcon fontSize="small"/>
         </IconButton>
       </CardActions> */}
     </Card>
