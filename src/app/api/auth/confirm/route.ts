@@ -1,3 +1,5 @@
+// what even is this...?
+
 import { type EmailOtpType } from "@supabase/supabase-js";
 import { type NextRequest, NextResponse } from "next/server";
 

@@ -50,7 +50,7 @@ export async function signup(formData: FormData) {
     }
 
     revalidatePath("/", "layout");
-    return redirect("/login");
+    return redirect("/");
   }
 
   return redirect(

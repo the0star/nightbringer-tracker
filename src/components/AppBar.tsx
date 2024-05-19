@@ -25,7 +25,7 @@ async function App() {
             <Link href="/account" passHref>
               <Button sx={{ color: "#fff" }}>Account</Button>
             </Link>
-            <form action="/auth/signout" method="post">
+            <form action="/api/auth/signout" method="post">
               <Button sx={{ color: "#fff" }} type="submit">
                 Sign out
               </Button>
