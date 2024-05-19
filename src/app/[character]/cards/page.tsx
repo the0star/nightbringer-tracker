@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
+import { TabPanel } from "@/components/TabPanel";
 
 import DemonCard from "@/components/Card/DemonCard";
 import MemoryCard from "@/components/Card/MemoryCard";
@@ -77,7 +77,7 @@ function CardsPage({ character }: { character: string }) {
             <Tab label="Memory" value="2" />
           </TabList>
         </Box>
-        <TabPanel value="1" sx={{ px: 0 }}>
+        <TabPanel value="1">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               {cards &&
@@ -91,7 +91,7 @@ function CardsPage({ character }: { character: string }) {
             </Grid>
           </Box>
         </TabPanel>
-        <TabPanel value="2" sx={{ px: 0 }}>
+        <TabPanel value="2">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               {cards &&
