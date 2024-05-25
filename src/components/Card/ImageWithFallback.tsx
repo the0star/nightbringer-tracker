@@ -30,8 +30,8 @@ export default function ImageWithFallback({
         width: "100%",
         height: "auto",
       }}
-      width={1}
-      height={1}
+      width={410}
+      height={553}
     />
   );
 }
