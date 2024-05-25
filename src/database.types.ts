@@ -150,19 +150,19 @@ export type Database = {
       };
       user_cards: {
         Row: {
-          card_name: string | null;
+          card_name: string;
           id: number;
-          user_id: string | null;
+          user_id: string;
         };
         Insert: {
-          card_name?: string | null;
+          card_name: string;
           id?: number;
-          user_id?: string | null;
+          user_id: string;
         };
         Update: {
-          card_name?: string | null;
+          card_name?: string;
           id?: number;
-          user_id?: string | null;
+          user_id?: string;
         };
         Relationships: [
           {
