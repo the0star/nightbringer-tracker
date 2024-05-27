@@ -8,13 +8,9 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import { TabPanel } from "@/components/TabPanel";
-
 import DemonCard from "@/components/Card/DemonCard";
 import MemoryCard from "@/components/Card/MemoryCard";
+import Tabber from "@/components/CardTabber";
 
 interface Props {
   character: string;
@@ -34,11 +30,6 @@ export default function CardsPage({ character, user }: Props) {
       }[]
     | null
   >(null);
-
-  const [value, setValue] = React.useState("1");
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
 
   const getCards = useCallback(async () => {
     try {
@@ -77,42 +68,28 @@ export default function CardsPage({ character, user }: Props) {
       <Typography variant="h3" gutterBottom>
         {character}
       </Typography>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList
-            onChange={handleChange}
-            variant="fullWidth"
-            aria-label="demon/memory card tabs"
-          >
-            <Tab label="Demon" value="1" />
-            <Tab label="Memory" value="2" />
-          </TabList>
-        </Box>
-        <TabPanel value="1">
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-              {demonCards &&
-                demonCards.map((card) => (
-                  <Grid item xs={12} sm={6} md={4} key={card.name}>
-                    <DemonCard card={card.name} user={user} />
-                  </Grid>
-                ))}
-            </Grid>
-          </Box>
-        </TabPanel>
-        <TabPanel value="2">
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-              {memoryCards &&
-                memoryCards.map((card) => (
-                  <Grid item xs={12} sm={4} md={3} lg={2} key={card.name}>
-                    <MemoryCard card={card.name} user={user} />
-                  </Grid>
-                ))}
-            </Grid>
-          </Box>
-        </TabPanel>
-      </TabContext>
+      <Tabber
+        demon={
+          <Grid container spacing={2}>
+            {demonCards &&
+              demonCards.map((card) => (
+                <Grid item xs={12} sm={6} md={4} key={card.name}>
+                  <DemonCard card={card.name} user={user} />
+                </Grid>
+              ))}
+          </Grid>
+        }
+        memory={
+          <Grid container spacing={2}>
+            {memoryCards &&
+              memoryCards.map((card) => (
+                <Grid item xs={12} sm={4} md={3} lg={2} key={card.name}>
+                  <MemoryCard card={card.name} user={user} />
+                </Grid>
+              ))}
+          </Grid>
+        }
+      />
     </>
   );
 }
