@@ -5,6 +5,7 @@ import {
   createTheme,
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import type {} from "@mui/lab/themeAugmentation";
 
 import DARK_THEME from "./dark";
 import LIGHT_THEME from "./light";

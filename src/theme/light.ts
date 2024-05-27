@@ -11,7 +11,7 @@ export const LIGHT_THEME: ThemeOptions = {
     //   paper: '#f5f5f5', // Gray 100 - Background of "Paper" based component
     //   default: '#FFFFFF',
     // },
-    ...PALETTE_COLORS,
+    // ...PALETTE_COLORS,
   },
 };
 

@@ -11,7 +11,9 @@ async function App() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6">TITLE</Typography>
+        <Typography variant="h6" sx={{ mr: 2 }}>
+          TITLE
+        </Typography>
         <Box sx={{ flexGrow: 1 }}>
           <Link href="/" passHref>
             <Button sx={{ color: "#fff" }}>Home</Button>

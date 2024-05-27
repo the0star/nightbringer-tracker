@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+
+// todo: create link component
 import Link from "next/link";
+import MuiLink from "@mui/material/Link";
 
 import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
@@ -83,7 +86,10 @@ export default function LoginView({
         <Typography variant="h4">Login</Typography>
 
         <Typography variant="body2" sx={{ mt: 2, mb: 3 }}>
-          Don’t have an account? <Link href="/signup">Sign up</Link>
+          Don’t have an account?{" "}
+          <Link href="/signup" passHref>
+            <MuiLink>Sign up</MuiLink>
+          </Link>
         </Typography>
 
         {renderForm}

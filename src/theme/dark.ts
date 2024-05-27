@@ -11,7 +11,7 @@ export const DARK_THEME: ThemeOptions = {
     //   paper: '#424242', // Gray 800 - Background of "Paper" based component
     //   default: '#121212',
     // },
-    ...PALETTE_COLORS,
+    // ...PALETTE_COLORS,
   },
 };
 
