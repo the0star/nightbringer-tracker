@@ -37,7 +37,10 @@ export default async function Page({
   if (error || !data?.user) {
     user = null;
   } else {
-    const cards = await supabase.from("user_cards").select("card_name");
+    const cards = await supabase
+      .from("user_cards")
+      .select("card_name")
+      .eq("user_id", data.user.id);
     user = {
       id: data.user.id,
       cards: cards.data ? cards.data.map((x) => x.card_name) : [],
