@@ -22,8 +22,8 @@ async function App() {
         </Box>
         {data?.session ? (
           <>
-            <Link href="/account" passHref>
-              <Button sx={{ color: "#fff" }}>Account</Button>
+            <Link href="/me" passHref>
+              <Button sx={{ color: "#fff" }}>My Cards</Button>
             </Link>
             <form action="/api/auth/signout" method="post">
               <Button sx={{ color: "#fff" }} type="submit">
