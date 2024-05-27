@@ -18,9 +18,9 @@ async function App() {
           <Link href="/" passHref>
             <Button sx={{ color: "#fff" }}>Home</Button>
           </Link>
-          <Link href="/about" passHref>
+          {/* <Link href="/about" passHref>
             <Button sx={{ color: "#fff" }}>About</Button>
-          </Link>
+          </Link> */}
         </Box>
         {data?.session ? (
           <>
