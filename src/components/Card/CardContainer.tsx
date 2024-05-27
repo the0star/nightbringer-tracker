@@ -81,7 +81,7 @@ export default function Container({
             }
             sx={{
               minWidth: "32px",
-              "&. MuiButton-startIcon": {
+              "& .MuiButton-startIcon": {
                 mx: 0,
               },
             }}
